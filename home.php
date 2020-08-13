@@ -4,90 +4,98 @@
 include_once 'header.php';
 
 ?>
+<style>
+
+.box {
+  transition: width 2s;
+  overflow: hidden;
+}
+
+.box img {
+    transition-property: transform;
+    transition-duration: 1s;
+}
 
 
-<div class="container-fluid">
-<form method="GET" id="dataFrom" name="dataFrom">
-<div id="pencarian">
-	<table class="table">
-	<tr>
-		<td width="60%"><strong>Sales Analisys</strong></td>
+.box .title {
+    transition-property: transform,background-color;
+    transition-duration: 1s;
+}
 
-		<td><strong>From</strong></td>
 
-		<td><input type="text" name="awal" class="form-control tgl" value="<?php echo !empty($_GET['awal'])?$_GET['awal']:date('Y-m-d') ?>">
-		</td>
-		<td><strong>To</strong></td>
-		<td>
+.box:hover{
+    background-color: #f8f4f4;
+}
 
-			<input type="text" name="akhir" class="form-control tgl" value="<?php echo !empty($_GET['akhir'])?$_GET['akhir']:date('Y-m-d') ?>">
-		</td>
-		<td>
-			<button class="btn btn-primary" type="SUBMIT" name="cari" value="cari">PROCCESS</button>
-		</td>
-	</tr>
-</table>
-</div>
-</form>
-<div style="background-color: #FFF;padding:1%;font-size: small">
+.box:hover{
+    cursor: pointer;
+    background-color: #f8f4f4;
+}
 
-	<table id="example" style="width:100%" class="stripe row-border order-column">
-        <thead>
-            <tr>
-                <th>invoice</th>
-                <th>tanggal</th>
-                <th>bisnis_unit</th>
-                <th>customer</th>
-                <th>sku</th>
-                <th>nama</th>
-                <th>UOM</th>
-                <th>komisi</th>
-                <th>supid</th>
-                <th>nama_supplier</th>
-                <th>qty</th>
-                <th>Harga</th>
-                <th>QtyKaliHarga</th>
-                <th>Discount</th>
-                <th>Total</th>
-                <th>PPN</th>
-                <th>Netto</th>
-            </tr>
-        </thead>
-        <tbody>
-            
-            <?php
-              for ($i=1; $i <= 20 ; $i++) { 
-                # code...
+.box:hover img{
+    transform : scale(2,2);
+}
 
-                ?>
+.box:hover .title{
+    transform: translate(50%);
+    background-color:#2C3E50;
+    color: #FFF;
 
-               <tr>
-                <td>INV-202015-<?php echo $i ?></td>
-                <td>tanggal</td>
-                <td><?php echo $i ?>bisnis_unit</td>
-                <td><?php echo $i ?>customer</td>
-                <td><?php echo $i ?>sku</td>
-                <td><?php echo $i ?>nama asdas asd as asdas dasd as d</td>
-                <td><?php echo $i ?>UOM</td>
-                <td><?php echo $i ?>komisi</td>
-                <td><?php echo $i ?>supid</td>
-                <td><?php echo $i ?>nama_supplier</td>
-                <td><?php echo $i ?>qty</td>
-                <td><?php echo $i ?>Harga</td>
-                <td><?php echo $i ?>QtyKaliHarga</td>
-                <td><?php echo $i ?>Discount</td>
-                <td><?php echo $i ?>Total</td>
-                <td><?php echo $i ?>PPN</td>
-                <td><?php echo $i ?>Netto</td>
-            </tr>
+}
 
-            <?php  }
+.title{
+    font-size: medium;
+    padding: 2%;
+    text-align: left;
+    font-weight: bold;
+    font-family: fantasy;
+    position: relative;
+}
 
-            ?>
+</style>
+</style>
 
-        
-           </tbody>
-</table>
+<div class="container-fluid" style="padding: 2%;">
+    <div class="row" style="margin-top: 2%;">
+        <div class="col col-sm-12">
+         <center>
+            <img src="images/analisa.svg" width="300" />
+         </center>
+        </div>
+        <div class="col-sm-3 box" style="height:180px;border-radius: 10px;border: 1px solid #f8f4f4;box-shadow: 0px 0px 1px 1px #cccccc;padding-top: 2%;margin-left: 5%;">
+           <center>
+            <img src="images/product.svg" width="150" />
+           </center>
+           <p class="title">Analisa per product</p>
+        </div>  
+
+        <div class="col-sm-3 box" style="height:180px;border-radius: 10px;border: 1px solid #f8f4f4;box-shadow: 0px 0px 1px 1px #cccccc;padding-top: 2%;margin-left: 5%;">
+            <center>
+             <img src="images/bulan.svg" width="150" />
+             <p class="title">Analisa per Transaksi</p>
+
+            </center>
+         </div>  
+
+         <div class="col-sm-3 box" style="height:180px;border-radius: 10px;border: 1px solid #f8f4f4;box-shadow: 0px 0px 1px 1px #cccccc;padding-top: 2%;margin-left: 5%;">
+            <center>
+             <img src="images/user.svg" width="150" />
+             <p class="title">Analisa per user</p>
+
+            </center>
+         </div>  
+
+        <div class="col col-sm-12">
+            <center>
+                <blockquote class="blockquote text-center" style="margin-top: 5%">
+                    <p class="mb-0">Analisa Penjulan Online</p>
+                    <footer class="blockquote-footer">Setiabudhi Supermarket &copy  <cite title="Source Title">2020</cite></footer>
+                  </blockquote>
+            </center> 
+        </div>
+
+         
+    </div>
 </div>
 
 <?php

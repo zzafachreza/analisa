@@ -62,8 +62,16 @@ if(!empty($_POST['username'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    if($username == 'Admin' && $password=='setiabudhi'){
-      echo 'berhasil';
+    if($username == 'admin' && $password=='setiabudhi'){
+      echo header('location:home.php');
+    }else{
+      ?>
+        <script>
+          alert('username atau password Anda salah !
+          ')
+        </script>
+
+      <?php
     }
 }
 
