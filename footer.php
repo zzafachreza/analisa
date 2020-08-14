@@ -8,6 +8,12 @@
   <script type="text/javascript" src="https://cdn.datatables.net/fixedcolumns/3.3.1/js/dataTables.fixedColumns.min.js"></script>
 
 
+
+ <script type="text/javascript" src="js/notify.js"></script>
+
+<script type="text/javascript" src="js/pagePreloaders.js"></script>
+  <script type="text/javascript" src="js/selectize.js"></script>
+
 <script type="text/javascript">
 $(document).ready(function() {
  var table = $('#example').DataTable( {
@@ -32,4 +38,14 @@ $(document).ready(function() {
 
   
 
+    $.ajaxSetup({
+            beforeSend: function() {
+              $(".btnLoading i").attr('class','fa fa-spinner');
+             },
+             complete: function() {
+                setTimeout(function(){
+                $(".btnLoading i").attr('class','fa fa-sign-in');
+            },1500)
+             }
+    });
 </script>

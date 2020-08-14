@@ -11,6 +11,11 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedcolumns/3.3.1/css/fixedColumns.dataTables.min.css">
+   <link href="css/pagePreloaders.css" rel="stylesheet" type="text/css" />
+<link href="css/selectize.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/flaticon/flaticon.css">
+<link rel="stylesheet" type="text/css" href="css/flaticon2/flaticon.css">
+<link rel="stylesheet" href="fa/css/font-awesome.css">
 
 </head>
 <body>
@@ -33,4 +38,17 @@
   font-family: 'MyWebFont';
   			src: url('Lemonada-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
 
+}
+
+/* Define an animation behavior */
+@keyframes spinner {
+  to { transform: rotate(360deg); }
+}
+/* This is the class name given by the Font Awesome component when icon contains 'spinner' */
+.fa-spinner {
+  /* Apply 'spinner' keyframes looping once every second (1s)  */
+  animation: spinner 2s linear infinite;
+}
 </style>
+
+
